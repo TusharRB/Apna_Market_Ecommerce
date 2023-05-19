@@ -11,12 +11,14 @@ import com.example.Apna_Market.Repository.CustomerRepository;
 import com.example.Apna_Market.Repository.OrderedRepository;
 import com.example.Apna_Market.Repository.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
 
-public class OrderServiceImpl{
+@Service
+public class OrderService {
 
     @Autowired
     ProductServiceImpl productService;
@@ -31,7 +33,7 @@ public class OrderServiceImpl{
     OrderedRepository orderedRepository;
 
 
-    
+
     public Ordered placeOrder(Customer customer, Card card) throws Exception {
 
 

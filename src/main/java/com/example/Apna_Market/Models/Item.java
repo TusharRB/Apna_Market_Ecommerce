@@ -5,6 +5,7 @@ import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
 
+
 @Entity
 @Table(name="item")
 @NoArgsConstructor
@@ -12,6 +13,7 @@ import lombok.experimental.FieldDefaults;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 
 public class Item {
 
@@ -19,13 +21,16 @@ public class Item {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    String name;
     int requiredQuantity;
 
 
     @ManyToOne
     @JoinColumn
     Cart cart;
+
+    @ManyToOne
+    @JoinColumn
+    Product product;
 
     @ManyToOne
     @JoinColumn

@@ -14,6 +14,7 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 
 public class Customer {
 
@@ -23,11 +24,13 @@ public class Customer {
 
 
     String name;
+    @Column(unique = true)
     String emailId;
-    String age;
+    Integer age;
 
-    String mobNo;
-    String Address;
+    @Column(unique = true)
+    Integer mobNo;
+    String address;
 
     @OneToMany(mappedBy = "customer",cascade = CascadeType.ALL)
     List<Card> cards = new ArrayList<>();

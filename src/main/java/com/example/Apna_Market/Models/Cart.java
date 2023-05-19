@@ -15,6 +15,7 @@ import java.util.List;
 @Getter
 @Setter
 @FieldDefaults(level = AccessLevel.PRIVATE)
+@Builder
 
 public class Cart {
 
@@ -22,7 +23,7 @@ public class Cart {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     int id;
 
-    Integer totalCost;
+    Integer cartTotal;
     Integer numberOfItems;
 
     @OneToOne

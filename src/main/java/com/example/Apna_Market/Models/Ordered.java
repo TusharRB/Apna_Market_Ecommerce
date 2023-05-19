@@ -4,13 +4,14 @@ package com.example.Apna_Market.Models;
 import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.FieldDefaults;
+import org.hibernate.annotations.CreationTimestamp;
 
-import java.util.ArrayList;
 import java.sql.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name="order")
+@Table(name="ordered")
 @NoArgsConstructor
 @AllArgsConstructor
 @Getter
@@ -24,6 +25,7 @@ public class Ordered {
     int id;
      String orderNo;
      int totalValue;
+     @CreationTimestamp
      Date orderDate;
      String cardUsed;
 
